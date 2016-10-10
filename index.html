@@ -92,7 +92,7 @@
 	  	</div>
 	  		<div class="row">
 	  			
-		  		<div class="tabela-comum col-md-6">
+		  		<div class="tabela-comum col-md-5">
 		  			<table class="table table-striped table-bordered">
 		  				<tr id="faturamento-anual">
 		  					<td>Faturamento Anual Clínica</td>
@@ -112,7 +112,7 @@
 		  				</tr>
 		  			</table>
 		  		</div>
-		  		<div class="tabela-vitta col-md-6">
+		  		<div class="tabela-vitta col-md-5 col-md-offset-1">
 		  			
 		  			<table class="table table-striped table-bordered">
 		  				<tr id="faturamento-total-anual-vitta" >
@@ -135,7 +135,7 @@
 		  		</div>
 	  		</div>
 	  		<div class="row">
-		  		<div class="tabela-comum col-md-6">
+		  		<div class="tabela-comum col-md-5">
 		  			<table class="table table-striped table-bordered">
 		  				<tr id="faturamento-anual">
 		  					<td>Faturamento Anual Médicos</td>
@@ -151,9 +151,9 @@
 		  				</tr>
 		  			</table>
 		  		</div>
-		  		<div class="tabela-vitta col-md-6">
+		  		<div class="tabela-vitta col-md-5 col-md-offset-1">
 		  			<table class="table table-striped table-bordered">
-		  				<tr id="faturamento-anual" >
+		  				<tr id="faturamento-anual">
 		  					<td>Faturamento Anual Médicos</td>
 		  					<td  id="faturamento-anual-medicos-vitta"class="texto-alinhado" >R$ 209.160,00</td>
 		  				</tr>
@@ -171,7 +171,7 @@
 
 	  		<div class="row">
 		  		<div class="col-md-12">
-		  			<div class="total-comum-1 col-md-6">
+		  			<div class="total-comum-1 col-md-5">
 		  				<div class="box-comum-1">
 		  					Total Impostos Médico + Clínica <span id="total-impostos-medicos-clinicas">
 		  					-R$ 125.007,60
@@ -179,7 +179,7 @@
 		  				</div>
 		  			</div>
 		  			
-		  			<div class="total-vitta-1 col-md-6">
+		  			<div class="total-vitta-1 col-md-5 col-md-offset-1">
 		  				<div class="box-vitta-1">
 		  					Total Impostos Médico + Clínica	 <span id="total-impostos-medicos-clinicas-vitta">-R$ 86.880,00	</span>	
 		  				</div>
@@ -188,12 +188,12 @@
 		  	</div>
 	  		<div class="row">
 		  		<div class="col-md-12">
-		  			<div class="total-comum-2 col-md-6">
+		  			<div class="total-comum-2 col-md-5 ">
 		  				<div class="box-comum-2">
 		  					Total Líquido Médico + Clínica <span id="total-liquido-medicos-clinicas">R$ 474.992,40</span>
 		  				</div>
 		  			</div>
-		  			<div class="total-vitta-2 col-md-6">
+		  			<div class="total-vitta-2 col-md-5 col-md-offset-1">
 		  				<div class="box-vitta-2">
 		  					Total Líquido Médico + Clínica	<span id="total-liquido-medicos-clinicas-vitta">R$ 513.120,00	</span>	
 		  				</div>
@@ -204,27 +204,28 @@
 	  		</div>
 
 	  			
-
-	  		<div class="row">
-	  			<div class="col-md-12 mensagem-final-box">
-	  				<div class="mensagem-final">
-	  					<p class="center">Com o Vitta Pagamentos, em um ano, você economizará R$ <span id="economia-total-bruta">38.000</span></p>
-		  			</div>
-		  		</div>
-		  	</div>
-		  	<div class="row">
-		  		<div class="col-md-12 mensagem-final-box-2">
-		  			<div class="col-md-6">
-		  				<div class="mensagem-economia-total">
-		  					Economia total com impostos de <span id="economia-total-percentual">R$ 38.000</span>
-		  				</div>
-		  			</div>
-		  			<div class="col-md-6">
-		  				<div class="mensagem-aumento-margem-bruta">
-		  					Aumento de margem bruta de <span id="economia-margem-bruta"> 07,43%</span>
-		  				</div>
-		  			</div>
-		  		</div>
+	  		<div id="mensagem-final">
+		  		<div class="row">
+		  			<div class="col-md-12 mensagem-final-box">
+		  				<div class="mensagem-final">
+		  					<p class="center">Com o Vitta Pagamentos, em um ano, você economizará R$ <span id="economia-total-bruta">38.000</span></p>
+			  			</div>
+			  		</div>
+			  	</div>
+			  	<div class="row">
+			  		<div class="col-md-12 mensagem-final-box-2">
+			  			<div class="col-md-6">
+			  				<div class="mensagem-economia-total">
+			  					Economia total com impostos de <span id="economia-total-percentual">R$ 38.000</span>
+			  				</div>
+			  			</div>
+			  			<div class="col-md-6">
+			  				<div class="mensagem-aumento-margem-bruta">
+			  					Aumento de margem bruta de <span id="economia-margem-bruta"> 07,43%</span>
+			  				</div>
+			  			</div>
+			  		</div>
+			  	</div>
 		  	</div>
 		  			
 	  			
@@ -247,6 +248,11 @@
     <script src="respond.min.js"></script>
 
     <script>
+
+    	$( window ).load(function() {
+		  $("#mensagem-final").hide();
+		});
+
     	$("#calcular").click(function(){
     		var faturamentoCartao = $("#entrada-faturamento-mensal-cartao").val(); // A5
     		var cargaTributariaClinica = $("#entrada-carga-tributaria-clinica").val(); //B5
@@ -332,6 +338,8 @@
 			var economiaMargemBruta = 1 - (totalLiquidoMedicosClinicas/totalLiquidoMedicosClinicasVitta);
 
 			$("#economia-margem-bruta").text(economiaMargemBruta.formatNumber({cents: ',',decimal: '.'}));
+
+			$("#mensagem-final").show();
 
 
 

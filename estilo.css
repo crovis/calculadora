@@ -1,6 +1,6 @@
-.body {
+body {
 	font-family: "Open Sans";
-	color: #F8F8FF;
+	padding-top: 0 !important;
 }
 
 .header-total {
@@ -44,28 +44,24 @@ td.texto-alinhado {
 }
 
 .total-comum-1 {
-	margin: 0.0em;
 	padding-bottom: 0.3em;
 	text-align: center;
 	color:	#F8F8FF;
 }
 
 .total-comum-2 {
-	margin: 0.0em;
 	padding-bottom: 0.3em;
 	text-align: center;
 	color:	#F8F8FF;
 }
 
 .total-vitta-1 {
-	margin: 0.0em;
 	padding-bottom: 0.3em;
 	text-align: center;
 	color:	#F8F8FF;
 }
 
 .total-vitta-2 {
-	margin: 0.0em;
 	padding-bottom: 0.3em;
 	text-align: center;
 	color:	#F8F8FF;
@@ -98,4 +94,3 @@ td.texto-alinhado {
 	padding-top: 1.5em;
 	background: #5F88FF;
 }
-
