@@ -1,5 +1,6 @@
 .body {
 	font-family: "Open Sans";
+	color: #F8F8FF;
 }
 
 .header-total {
@@ -9,7 +10,7 @@
 }
 
 .title {
-
+	text-align: right;
 }
 
 .mensagem-final-box {
