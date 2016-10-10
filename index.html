@@ -20,6 +20,10 @@
 	<link rel="stylesheet" type="text/css" href="usebootstrap.css">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
 	<!-- Latest compiled and minified JavaScript -->
 	
 
@@ -33,9 +37,17 @@
   <body>
 	  <header>
 	  	<div class="header header-total">
-	  		<div class="logo"></div>
-	  		<div class="title"><h2>Calculadora de bitributação</h2></div>
-	  		<div class="Subtitle"><h3>Deixe de perder dinheiro!</h3></div>
+	  	<div class="row">
+	  		<div class="col-md-12">
+	  			<div class="col-md-6">
+	  				<div class="logo"><img src="img/logo.png"></div>
+	  			</div>
+	  			<div class="col-md-6">
+	  				<div class="title"><h2>Calculadora de bitributação</h2></div>
+	  				<div class="Subtitle"><h3>Deixe de perder dinheiro!</h3></div>
+	  			</div>
+	  		</div>
+	  	</div>
 	  	</div>
 	  </header>
 	  <div class="container">
@@ -68,44 +80,54 @@
 	  	
 
 	  	<div class="tabelas-comparacao col-md-12">
+	  	<div class="row">
+	  			<div class="titulo-tabela vitta-grey col-md-6">
+	  				<h3>Sem Vitta Pagamentos (Modelo Atual)</h3>
+	  			</div>
+	  			<div class="titulo-tabela vitta-blue col-md-6">
+		  				<h3>Com Vitta Pagamentos (Otimização tributária)</h3>
+		  		</div>
+	  	</div>
 	  		<div class="row">
+	  			
 		  		<div class="tabela-comum col-md-6">
 		  			<table class="table table-striped table-bordered">
 		  				<tr id="faturamento-anual">
 		  					<td>Faturamento Anual Clínica</td>
-		  					<td id="faturamento-anual-valor">600.000,00</td>
+		  					<td id="faturamento-anual-valor" class="texto-alinhado">600.000,00</td>
 		  				</tr>
 		  				<tr id="impostos-anuais">
 		  					<td>Impostos Anuais Clínica</td>
-		  					<td id="impostos-anuais-valor">-R$ 102.000,00</td>
+		  					<td id="impostos-anuais-valor" class="texto-alinhado">-R$ 102.000,00</td>
 		  				</tr>
 		  				<tr id="repasse-medicos">
 		  					<td>Repasse aos médicos</td>
-		  					<td id="repasse-medicos-valor">R$ 209.160,00</td>
+		  					<td id="repasse-medicos-valor" class="texto-alinhado">R$ 209.160,00</td>
 		  				</tr>
 		  				<tr id="total-liquido">
 		  					<td>Total Líquido Clínica</td>
-		  					<td id="total-liquido-valor">R$ 288.840,00</td>
+		  					<td id="total-liquido-valor" class="texto-alinhado">R$ 288.840,00</td>
 		  				</tr>
 		  			</table>
 		  		</div>
 		  		<div class="tabela-vitta col-md-6">
+		  			
 		  			<table class="table table-striped table-bordered">
 		  				<tr id="faturamento-total-anual-vitta">
 		  					<td>Faturamento Total Anual</td>
-		  					<td id="faturamento-total-anual-valor-vitta">R$ 600.000,00</td>
+		  					<td id="faturamento-total-anual-valor-vitta" class="texto-alinhado">R$ 600.000,00</td>
 		  				</tr>
 		  				<tr id="faturamento-anual-vitta">
 		  					<td>Faturamento Anual Clínica</td>
-		  					<td id="faturamento-anual-valor-vitta">R$ 600.000,00</td>
+		  					<td id="faturamento-anual-valor-vitta" class="texto-alinhado">R$ 600.000,00</td>
 		  				</tr>
 		  				<tr id="impostos-anuais-vitta">
 		  					<td>Impostos Anuais Clínica</td>
-		  					<td id="impostos-anuais-valor-vitta">-R$ 59.160,00</td>
+		  					<td id="impostos-anuais-valor-vitta" class="texto-alinhado">-R$ 59.160,00</td>
 		  				</tr>
 		  				<tr id="total-liquido-vitta">
 		  					<td>Total Líquido</td>
-		  					<td id="total-liquido-valor-vitta">R$ 288.840,00</td>
+		  					<td id="total-liquido-valor-vitta" class="texto-alinhado">R$ 288.840,00</td>
 		  				</tr>
 		  			</table>
 		  		</div>
@@ -115,15 +137,15 @@
 		  			<table class="table table-striped table-bordered">
 		  				<tr id="faturamento-anual">
 		  					<td>Faturamento Anual Médicos</td>
-		  					<td id="faturamento-anual-medicos">R$ 209.160,00</td>
+		  					<td id="faturamento-anual-medicos" class="texto-alinhado">R$ 209.160,00</td>
 		  				</tr>
 		  				<tr id="faturamento-anual">
 		  					<td>Impostos Anuais Médicos</td>
-		  					<td id="faturamento-anual-imposto-medicos">R$ 23.007,60</td>
+		  					<td id="faturamento-anual-imposto-medicos" class="texto-alinhado">R$ 23.007,60</td>
 		  				</tr>
 		  				<tr id="faturamento-anual">
 		  					<td>Total Líquido</td>
-		  					<td id="faturamento-anual-liquido">R$ 186.152,40</td>
+		  					<td id="faturamento-anual-liquido" class="texto-alinhado">R$ 186.152,40</td>
 		  				</tr>
 		  			</table>
 		  		</div>
@@ -131,48 +153,65 @@
 		  			<table class="table table-striped table-bordered">
 		  				<tr id="faturamento-anual">
 		  					<td>Faturamento Anual Médicos</td>
-		  					<td  id="faturamento-anual-medicos-vitta">R$ 209.160,00</td>
+		  					<td  id="faturamento-anual-medicos-vitta"class="texto-alinhado" >R$ 209.160,00</td>
 		  				</tr>
 		  				<tr id="faturamento-anual">
 		  					<td>Impostos Anuais Médicos</td>
-		  					<td  id="faturamento-anual-imposto-medicos-vitta">R$ 23.007,60</td>
+		  					<td  id="faturamento-anual-imposto-medicos-vitta" class="texto-alinhado">R$ 23.007,60</td>
 		  				</tr>
 		  				<tr id="faturamento-anual">
 		  					<td>Total Líquido</td>
-		  					<td  id="faturamento-anual-liquido-vitta">R$ 186.152,40</td>
+		  					<td  id="faturamento-anual-liquido-vitta" class="texto-alinhado">R$ 186.152,40</td>
 		  				</tr>
 		  			</table>
 		  		</div>
 	  		</div>
 
 	  		<div class="row">
-	  			<div class="total-comum-1 col-md-6">
-	  				Total Impostos Médico + Clínica <span id="total-impostos-medicos-clinicas">
-	  					-R$ 125.007,60
-	  				</span>	
-	  			</div>
-	  			<div class="total-comum-2 col-md-6">
-	  				Total Líquido Médico + Clínica <span id="total-liquido-medicos-clinicas">R$ 474.992,40</span>	
-	  			</div>
-	  		</div>
+		  		<div class="col-md-12">
+		  			<div class="total-comum-1 col-md-6">
+		  				<div class="box-comum-1">
+		  					Total Impostos Médico + Clínica <span id="total-impostos-medicos-clinicas">
+		  					-R$ 125.007,60
+		  					</span>	
+		  				</div>
+		  			</div>
+		  			
+		  			<div class="total-vitta-1 col-md-6">
+		  				<div class="box-vitta-1">
+		  					Total Impostos Médico + Clínica	 <span id="total-impostos-medicos-clinicas-vitta">-R$ 86.880,00	</span>	
+		  				</div>
+		  			</div>
+		  		</div>
+		  	</div>
 	  		<div class="row">
-	  			<div class="total-vitta-1 col-md-6">
-	  				Total Impostos Médico + Clínica	 <span id="total-impostos-medicos-clinicas-vitta">-R$ 86.880,00	</span>	
-	  			</div>
-	  			<div class="total-vitta-2 col-md-6">
-	  				Total Líquido Médico + Clínica	<span id="total-liquido-medicos-clinicas-vitta">R$ 513.120,00	</span>	
-	  			</div>
+		  		<div class="col-md-12">
+		  			<div class="total-comum-2 col-md-6">
+		  				<div class="box-comum-2">
+		  					Total Líquido Médico + Clínica <span id="total-liquido-medicos-clinicas">R$ 474.992,40</span>
+		  				</div>
+		  			</div>
+		  			<div class="total-vitta-2 col-md-6">
+		  				<div class="box-vitta-2">
+		  					Total Líquido Médico + Clínica	<span id="total-liquido-medicos-clinicas-vitta">R$ 513.120,00	</span>	
+		  				</div>
+		  			</div>
+
+		  		</div>
+	  			
 	  		</div>
 
+	  			
+
 	  		<div class="row">
-	  			<div class="col-md-12">
+	  			<div class="col-md-12 mensagem-final-box">
 	  				<div class="mensagem-final">
 	  					<p class="center">Com o Vitta Pagamentos, em um ano, você economizará R$ <span id="economia-total-bruta">38.000</span></p>
 		  			</div>
 		  		</div>
 		  	</div>
 		  	<div class="row">
-		  		<div class="col-md-12">
+		  		<div class="col-md-12 mensagem-final-box-2">
 		  			<div class="col-md-6">
 		  				<div class="mensagem-economia-total">
 		  					Economia total com impostos de <span id="economia-total-percentual">R$ 38.000</span>
