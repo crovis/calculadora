@@ -264,7 +264,7 @@
     			$("span#carga-tributaria-clinica-mensagem").text("Ops! Este valor deve estar entre 0% e 100%");
     		}
 
-    		if(validarNumPercetual(repasseMedicos)) {
+    		/*if(validarNumPercetual(repasseMedicos)) {
     			$("div#repasse-medicos").addClass("has-error");
     			$("span#repasse-medicos-mensagem").text("Ops! Este valor deve estar entre 0% e 100%");
     		}
@@ -272,19 +272,19 @@
     		if(validarNumPercetual(cargaTributariaMedico)) {
     			$("div#carga-tributaria-medico").addClass("has-error");
     			$("span#carga-tributaria-medico-mensagem").text("Ops! Este valor deve estar entre 0% e 100%");
-    		}
+    		} */
 
 
-    		var valorFaturamentoAnual = faturamentoCartao*12;
+    		var valorFaturamentoAnual = faturamentoCartao*12.0;
     		var valorImpostosAnuais = (faturamentoCartao*cargaTributariaClinica*(-12))/ 100;
     		var valorRepasseMedicos = ((valorFaturamentoAnual + valorImpostosAnuais) * repasseMedicos / 100);
     		var valorTotalLiquido = (valorFaturamentoAnual + valorImpostosAnuais) - valorRepasseMedicos //C7+C8-C9
     		
     		// Atualizar valores nos campos com bitributaçaõ
-    		$("#faturamento-anual-valor").text("R$ " + valorFaturamentoAnual.formatNumber({cents: ',',decimal: '.'}));
-			$("#impostos-anuais-valor").text("R$ " + valorImpostosAnuais.formatNumber({cents: ',',decimal: '.'}));
-			$("#repasse-medicos-valor").text("R$ " + valorRepasseMedicos.formatNumber({cents: ',',decimal: '.'}));
-			$("#total-liquido-valor").text("R$ " + valorTotalLiquido.formatNumber({cents: ',',decimal: '.'}));
+    		$("#faturamento-anual-valor").text("R$ " + valorFaturamentoAnual);
+			$("#impostos-anuais-valor").text("R$ " + valorImpostosAnuais);
+			$("#repasse-medicos-valor").text("R$ " + valorRepasseMedicos);
+			$("#total-liquido-valor").text("R$ " + valorTotalLiquido);
 
 			var valorFaturamentoAnualTotalVitta = valorFaturamentoAnual;
 			var valorFaturamentoAnualVitta = faturamentoCartao*12*(100-repasseMedicos)/100;
@@ -292,27 +292,27 @@
     		var valorTotalLiquidoVitta = valorFaturamentoAnualVitta + valorImpostosAnuaisVitta;
 
     		// Atualizar valores nos campos com bitributaçaõ
-    		$("#faturamento-total-anual-valor-vitta").text('R$ ' +valorFaturamentoAnualTotalVitta.formatNumber({cents: ',',decimal: '.'}));
-			$("#faturamento-anual-valor-vitta").text('R$ ' + valorFaturamentoAnualVitta.formatNumber({cents: ',',decimal: '.'}));
-			$("#impostos-anuais-valor-vitta").text("R$ " + valorImpostosAnuaisVitta.formatNumber({cents: ',',decimal: '.'}));
-			$("#total-liquido-valor-vitta").text("R$ " + valorTotalLiquidoVitta.formatNumber({cents: ',',decimal: '.'}));
+    		$("#faturamento-total-anual-valor-vitta").text('R$ ' +valorFaturamentoAnualTotalVitta);
+			$("#faturamento-anual-valor-vitta").text('R$ ' + valorFaturamentoAnualVitta);
+			$("#impostos-anuais-valor-vitta").text("R$ " + valorImpostosAnuaisVitta);
+			$("#total-liquido-valor-vitta").text("R$ " + valorTotalLiquidoVitta);
 
 			var faturamentoTotalMedicos = (100-cargaTributariaClinica)*faturamentoCartao*repasseMedicos*12 / 10000//((1-B5)*A5*C5)*12
 			var impostosAnuaisMedicos = (-1) * faturamentoTotalMedicos*cargaTributariaMedico / 100;
 			var totalLiquidoMedicos = faturamentoTotalMedicos + impostosAnuaisMedicos;
 
-			$("#faturamento-anual-medicos").text(faturamentoTotalMedicos.formatNumber({cents: ',',decimal: '.'}));
-			$("#faturamento-anual-imposto-medicos").text(impostosAnuaisMedicos.formatNumber({cents: ',',decimal: '.'}));
-			$("#faturamento-anual-liquido").text(totalLiquidoMedicos.formatNumber({cents: ',',decimal: '.'}));
+			$("#faturamento-anual-medicos").text(faturamentoTotalMedicos);
+			$("#faturamento-anual-imposto-medicos").text(impostosAnuaisMedicos);
+			$("#faturamento-anual-liquido").text(totalLiquidoMedicos);
 
 
 			var faturamentoTotalMedicosVitta = (faturamentoCartao * repasseMedicos * 12)/100;
 			var impostosAnuaisMedicosVitta = ((-1) * faturamentoTotalMedicosVitta*cargaTributariaMedico) / 100;
 			var totalLiquidoMedicosVitta = faturamentoTotalMedicosVitta + impostosAnuaisMedicosVitta;
 
-			$("#faturamento-anual-medicos-vitta").text(faturamentoTotalMedicosVitta.formatNumber({cents: ',',decimal: '.'}));
-			$("#faturamento-anual-imposto-medicos-vitta").text(impostosAnuaisMedicosVitta.formatNumber({cents: ',',decimal: '.'}));
-			$("#faturamento-anual-liquido-vitta").text(totalLiquidoMedicosVitta.formatNumber({cents: ',',decimal: '.'}));
+			$("#faturamento-anual-medicos-vitta").text(faturamentoTotalMedicosVitta);
+			$("#faturamento-anual-imposto-medicos-vitta").text(impostosAnuaisMedicosVitta);
+			$("#faturamento-anual-liquido-vitta").text(totalLiquidoMedicosVitta);
 
 			var totalImpostosMedicosClinicas = valorImpostosAnuais + impostosAnuaisMedicos;
 			var totalImpostosMedicosClinicasVitta = valorImpostosAnuaisVitta + impostosAnuaisMedicosVitta;
@@ -321,23 +321,23 @@
 			var totalLiquidoMedicosClinicasVitta = valorTotalLiquidoVitta + totalLiquidoMedicosVitta;
 
 
-			$("#total-impostos-medicos-clinicas").text(totalImpostosMedicosClinicas.formatNumber({cents: ',',decimal: '.'}));
-			$("#total-liquido-medicos-clinicas").text(totalLiquidoMedicosClinicas.formatNumber({cents: ',',decimal: '.'}));
-			$("#total-impostos-medicos-clinicas-vitta").text(totalImpostosMedicosClinicasVitta.formatNumber({cents: ',',decimal: '.'}));
-			$("#total-liquido-medicos-clinicas-vitta").text(totalLiquidoMedicosClinicasVitta.formatNumber({cents: ',',decimal: '.'}));
+			$("#total-impostos-medicos-clinicas").text(totalImpostosMedicosClinicas);
+			$("#total-liquido-medicos-clinicas").text(totalLiquidoMedicosClinicas);
+			$("#total-impostos-medicos-clinicas-vitta").text(totalImpostosMedicosClinicasVitta);
+			$("#total-liquido-medicos-clinicas-vitta").text(totalLiquidoMedicosClinicasVitta);
 
 			var economiaTotal = (totalImpostosMedicosClinicas - totalImpostosMedicosClinicasVitta)*(-1);
 
-			$("#economia-total-bruta").text(economiaTotal.formatNumber({cents: ',',decimal: '.'}));
+			$("#economia-total-bruta").text(economiaTotal);
 
 
 			var economiaTotalPercentual = (1-(totalImpostosMedicosClinicasVitta/totalImpostosMedicosClinicas));
 
-			$("#economia-total-percentual").text(economiaTotalPercentual.formatNumber({cents: ',',decimal: '.'}));
+			$("#economia-total-percentual").text(economiaTotalPercentual);
 
 			var economiaMargemBruta = 1 - (totalLiquidoMedicosClinicas/totalLiquidoMedicosClinicasVitta);
 
-			$("#economia-margem-bruta").text(economiaMargemBruta.formatNumber({cents: ',',decimal: '.'}));
+			$("#economia-margem-bruta").text(economiaMargemBruta);
 
 			$("#mensagem-final").show();
 
